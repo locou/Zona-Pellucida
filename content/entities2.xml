@@ -1,0 +1,5 @@
+<entities anm2root="gfx/" version="5">
+    <entity anm2path="003.pet_rock.anm2" baseHP="0" boss="0" champion="0" collisionDamage="3" collisionMass="3" collisionRadius="13" friction="0.025" id="3" name="Pet Rock" numGridCollisionPoints="12" shadowSize="0" stageHP="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+</entities>

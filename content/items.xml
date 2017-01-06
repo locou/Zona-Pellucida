@@ -1,0 +1,8 @@
+<items gfxroot="gfx/items/" version="1">
+    <!--Actives-->
+    <active description="Déjà vu." gfx="Collectibles_Chirurgical_Extraction.png" maxcharges="12" name="Chirurgical Extraction"/>
+    <!--Passives-->
+		<passive description="Burnt nerves." gfx="Collectibles_Hot_Iron.png" name="Hot Iron"/>
+    <!--Familiars-->
+		<familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
+</items>

@@ -57,6 +57,17 @@ function locou:CountEntities(ent_type)
   return count or 1
 end
 
+function locou:GetCollectibles()
+    local ply = game:GetPlayer(0)
+    local items = {}
+    for i = 1, CollectibleType.NUM_COLLECTIBLES do
+        if(ply:HasCollectible(i) and not table.contains(items, i)) then
+          table.insert(items, i)
+        end
+    end
+    return items
+end
+
 function table.contains(table, element)
   for _, value in pairs(table) do
     if value == element then

@@ -41,15 +41,16 @@ function full_vessel:Update()
       ply:AddNullCostume(FullVessel.costumeid)
       hasCostume = true
     end
-  
-    local near_ents = locou:GetEntitiesByDistance(ply,60)
-    for k,v in pairs(near_ents) do
-      if(v:IsVulnerableEnemy() and not v:HasEntityFlags(EntityFlag.FLAG_FREEZE) and not v:HasEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)) then
-        v:AddFreeze(EntityRef(v), 240)
-        v:AddEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
-        timer.Simple(6.0, function()
-            v:ClearEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
-        end)
+    if(hasCostume) then
+      local near_ents = locou:GetEntitiesByDistance(ply,60)
+      for k,v in pairs(near_ents) do
+        if(v:IsVulnerableEnemy() and not v:HasEntityFlags(EntityFlag.FLAG_FREEZE) and not v:HasEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)) then
+          v:AddFreeze(EntityRef(v), 240)
+          v:AddEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
+          timer.Simple(6.0, function()
+              v:ClearEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
+          end)
+        end
       end
     end
   end
@@ -58,7 +59,7 @@ end
 function full_vessel:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames)
   local ply = game:GetPlayer(0)
   if(ply:HasCollectible(FullVessel.ID)) then
-      if(dmg_target:HasEntityFlags(EntityFlag.FLAG_FREEZE) and dmg_amount >= dmg_target.HitPoints and dmg_target:IsEnemy() and ply:GetSoulHearts() == 0 and ply:GetBlackHearts() == 0) then
+      if(dmg_target:HasEntityFlags(EntityFlag.FLAG_FREEZE) and dmg_amount >= dmg_target.HitPoints and dmg_target:IsEnemy() and hasCostume) then
         for i=1,6 do
           ply:FireTear(dmg_target.Position, RandomVector() * 15, true, true, false)
         end

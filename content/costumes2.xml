@@ -1,0 +1,3 @@
+<costumes anm2root="gfx/characters/">
+	<costume anm2path="313_holymantle.anm2" priority="1" type="none" />
+</costumes>

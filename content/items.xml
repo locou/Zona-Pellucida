@@ -3,6 +3,11 @@
     <active description="Déjà vu." gfx="Collectibles_Chirurgical_Extraction.png" maxcharges="12" name="Chirurgical Extraction"/>
     <!--Passives-->
 		<passive description="Burnt nerves." gfx="Collectibles_Hot_Iron.png" name="Hot Iron"/>
+    <passive description="Face your enemies." gfx="Collectibles_Challenger.png" name="Challenger"/>
+    <passive cache="damage speed" description="Petrifying." gfx="Collectibles_Full_Vessel.png" hearts="2" name="Full Vessel"/>
     <!--Familiars-->
 		<familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
+    <!--Trinkets-->
+    <trinket cache="" description="Double trouble." gfx="Trinket_Bee_Stinger.png" name="Bee Stinger" />
+    <trinket cache="" description="Coin on a string." gfx="Trinket_Coin_On_A_String.png" name="Coin On A String" />
 </items>

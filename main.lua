@@ -16,22 +16,21 @@ local game = Game()
 locou.Items = {
   Actives = {},
   Passives = {},
-  Familiars = {}
+  Familiars = {},
+  Trinkets = {}
 }
 
 function locou:Init()
   PlayerItems = {}
 end
 
-local update_time = 60 --Calls every 60 frames i.e. 60fps
 function locou:Update()
-  timer.Update(1/update_time)
 end
 
 function locou:ItemUpdate(ply, flag)
   ply = game:GetPlayer(0)
-  --if(not table.contains(PlayerItems, 
-  if(not flag == CacheFlag.CACHE_FAMILIARS) then else
+  if(not flag == CacheFlag.CACHE_FAMILIARS) then
+  else
     for k,v in pairs(locou.Items.Familiars) do
       locou:InitFamiliar(ply, v.ID, v.Type, v.Variant)
     end
@@ -68,6 +67,27 @@ function locou:GetCollectibles()
     return items
 end
 
+function locou:GetEntitiesByDistance(ent, distance)
+  local room_ents = Isaac.GetRoomEntities()
+  local ents = {}
+  for k,v in pairs(room_ents) do
+    if(ent.Position:Distance(v.Position) <= distance and v ~= ent) then
+      table.insert(ents, v)
+    end
+  end
+  return ents
+end
+
+function locou:GetWeaponType()
+    local ply = game:GetPlayer(0)
+    for i = 0, #WeaponType - 1 do
+      if(ply:HasWeaponType(k)) then
+        return k
+      end
+    end
+    return WeaponType.WEAPON_TEARS
+end
+
 function table.contains(table, element)
   for _, value in pairs(table) do
     if value == element then
@@ -77,7 +97,13 @@ function table.contains(table, element)
   return false
 end
 
+function table.foreach(table, func)
+  
+end
+
+local update_time = 60 --Calls every 60 frames i.e. 60fps
 function locou:render()
+    timer.Update(1/update_time)
     Isaac.RenderText("Frame Count:"..game:GetFrameCount(), 50, 15, 255, 255, 255, 255)
 end
 
@@ -90,3 +116,7 @@ locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, locou.Init);
 Include('items/hot_iron.lua')
 Include('items/pet_rock.lua')
 Include('items/chirurgical_extraction.lua')
+Include('items/bee_stinger.lua')
+Include('items/coin_on_a_string.lua')
+Include('items/challenger.lua')
+Include('items/full_vessel.lua')

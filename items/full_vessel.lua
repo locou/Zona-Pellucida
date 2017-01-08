@@ -48,7 +48,7 @@ function full_vessel:Update()
       local near_ents = locou:GetEntitiesByDistance(ply,60)
       for k,v in pairs(near_ents) do
         if(v:IsVulnerableEnemy() and not v:HasEntityFlags(EntityFlag.FLAG_FREEZE) and not v:HasEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)) then
-          v:AddFreeze(EntityRef(v), 240)
+          v:AddFreeze(EntityRef(v), 4 * 60)
           v:AddEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)
           timer.Simple(6.0, function()
               v:ClearEntityFlags(EntityFlag.FLAG_NO_STATUS_EFFECTS)

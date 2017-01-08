@@ -78,6 +78,17 @@ function locou:GetEntitiesByDistance(ent, distance)
   return ents
 end
 
+function locou:GetEntitiesByType(ent_type)
+  local room_ents = Isaac.GetRoomEntities()
+  local ents = {}
+  for k,v in pairs(room_ents) do
+    if(v.Type == ent_type) then
+      table.insert(ents, v)
+    end
+  end
+  return ents
+end
+
 function locou:GetWeaponType()
     local ply = game:GetPlayer(0)
     for i = 0, #WeaponType - 1 do
@@ -122,3 +133,4 @@ Include('items/challenger.lua')
 Include('items/full_vessel.lua')
 Include('items/camoflage.lua')
 Include('items/equality.lua')
+Include('items/bodyguards.lua')

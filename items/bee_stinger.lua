@@ -31,7 +31,7 @@ function bee_stinger:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source
       ply:TakeDamage(1, DamageFlag.DAMAGE_FAKE, EntityRef(ply), 0)
       ply:GetSprite():Stop()
     end)
-    if(ply:HasCollectible(CollectibleType.COLLECTIBLE_MOMS_BOX) then
+    if(ply:HasCollectible(CollectibleType.COLLECTIBLE_MOMS_BOX)) then
       timer.Simple(2.1, function()
         ply:TakeDamage(1, DamageFlag.DAMAGE_FAKE, EntityRef(ply), 0)
         ply:GetSprite():Stop()

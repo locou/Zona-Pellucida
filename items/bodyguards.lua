@@ -8,35 +8,7 @@ local Bodyguards = {
 table.insert(locou.Items.Passives, Bodyguards)
 
 local familiars = {}
-local acceptable_collectibles = {
-  CollectibleType.COLLECTIBLE_ABEL,
-  CollectibleType.COLLECTIBLE_BROTHER_BOBBY,
-  CollectibleType.COLLECTIBLE_BUM_FRIEND,
-  CollectibleType.COLLECTIBLE_DARK_BUM,
-  CollectibleType.COLLECTIBLE_DRY_BABY,
-  CollectibleType.COLLECTIBLE_GHOST_BABY,
-  CollectibleType.COLLECTIBLE_DEMON_BABY,
-  CollectibleType.COLLECTIBLE_HARLEQUIN_BABY,
-  CollectibleType.COLLECTIBLE_LIL_BRIMSTONE,
-  CollectibleType.COLLECTIBLE_LIL_HAUNT,
-	CollectibleType.COLLECTIBLE_LITTLE_CHAD,
-	CollectibleType.COLLECTIBLE_LITTLE_CHUBBY,
-	CollectibleType.COLLECTIBLE_LITTLE_GISH,
-	CollectibleType.COLLECTIBLE_LITTLE_STEVEN,
-	CollectibleType.COLLECTIBLE_MONGO_BABY,
-	CollectibleType.COLLECTIBLE_RAINBOW_BABY,
-	CollectibleType.COLLECTIBLE_ROBO_BABY,
-	CollectibleType.COLLECTIBLE_ROBO_BABY_2,
-	CollectibleType.COLLECTIBLE_ROTTEN_BABY,
-	CollectibleType.COLLECTIBLE_SISTER_MAGGY,
-	CollectibleType.COLLECTIBLE_MULTIDIMENSIONAL_BABY,
-	CollectibleType.COLLECTIBLE_FARTING_BABY,
-	CollectibleType.COLLECTIBLE_KEY_BUM,
-	CollectibleType.COLLECTIBLE_SERAPHIM,
-	CollectibleType.COLLECTIBLE_SWORN_PROTECTOR,
-	CollectibleType.COLLECTIBLE_INCUBUS,
-	CollectibleType.COLLECTIBLE_GUARDIAN_ANGEL
-}
+
 local acceptable_variants = {
   FamiliarVariant.ABEL,
   FamiliarVariant.BROTHER_BOBBY,
@@ -100,7 +72,7 @@ local toggle = true
 function bodyguards:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames) --TODO: Clean this up / find a better way.
   local ply = game:GetPlayer(0)
   local room = game:GetRoom()
-  if(ply:HasCollectible(Bodyguards.ID)) then
+  if(ply:HasCollectible(Bodyguards.ID) and dmg_source.Type ~= EntityType.ENTITY_FIREPLACE) then
     if(familiars ~= nil) then
       Isaac.DebugString("Familiars: " .. #familiars)
       if(#familiars > 0 and dmg_amount > 0 and next_fam <= #familiars) then
@@ -110,6 +82,7 @@ function bodyguards:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source,
             local familiar = familiars[next_fam]
             if(familiar ~= nil) then
               ply:AddEntityFlags(EntityFlag.FLAG_NO_FLASH_ON_DAMAGE)
+              familiar:BloodExplode()
               familiar:Remove()
               previous_fam = next_fam
               next_fam = next_fam + 1

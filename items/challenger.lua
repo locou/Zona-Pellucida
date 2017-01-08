@@ -5,7 +5,7 @@ local Challenger = {
   ID = Isaac.GetItemIdByName( "Challenger" ),
 }
 
-table.insert(locou.Items.Actives, Challenger)
+table.insert(locou.Items.Passives, Challenger)
 
 local cur_floor = LevelStage.STAGE_NULL
 

@@ -10,7 +10,8 @@ table.insert(locou.Items.Actives, ChirurgicalExtraction)
 function chirurgical_extraction:Use_Item(rng)
   local ply = game:GetPlayer(0)
   local items = locou:GetCollectibles()
-  local item = items[RNG():RandomInt(#items)] or ChirurgicalExtraction.ID
+  local item = items[math.random(#items)]
+  if item == nil then item = ChirurgicalExtraction.ID end
   local pedestal = game:Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, ply.Position, Vector(0,0), ply, item, rng)
   return true
 end

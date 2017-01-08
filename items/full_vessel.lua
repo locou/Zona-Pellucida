@@ -11,7 +11,7 @@ local FullVessel = {
 
 local hasCostume = false;
 
-table.insert(locou.Items.Actives, FullVessel)
+table.insert(locou.Items.Passives, FullVessel)
 
 function full_vessel:Init()
     FullVessel.costumeid = Isaac.GetCostumeIdByPath("gfx/characters/" .. FullVessel.costume)
@@ -27,6 +27,9 @@ function full_vessel:EvaluateCache(ply, flag)
     end
     if(flag == CacheFlag.CACHE_SPEED) then
       ply.MoveSpeed = ply.MoveSpeed + FullVessel.speed_bonus
+    end
+    if(not hasCostume) then
+      ply:AddNullCostume(FullVessel.costumeid)
     end
   end
 end

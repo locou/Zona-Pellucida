@@ -47,13 +47,13 @@ function locou:InitFamiliar(ply, familiar_item, familiar_type, familiar_variant)
 end
 
 function locou:CountEntities(ent_type)
-  local count = 1
+  local count = 0
   for k,v in pairs(Isaac.GetRoomEntities()) do
     if(v.Type == ent_type) then
       count = count + 1
     end
   end
-  return count or 1
+  return count or 0
 end
 
 function locou:GetCollectibles()
@@ -120,3 +120,4 @@ Include('items/bee_stinger.lua')
 Include('items/coin_on_a_string.lua')
 Include('items/challenger.lua')
 Include('items/full_vessel.lua')
+Include('items/camoflage.lua')

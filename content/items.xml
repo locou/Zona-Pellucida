@@ -5,6 +5,7 @@
 		<passive description="Burnt nerves." gfx="Collectibles_Hot_Iron.png" name="Hot Iron"/>
     <passive description="Face your enemies." gfx="Collectibles_Challenger.png" name="Challenger"/>
     <passive cache="damage speed" description="Petrifying." gfx="Collectibles_Full_Vessel.png" hearts="2" name="Full Vessel"/>
+    <passive description="Nature's craftiest trick." gfx="Collectibles_Camoflage.png" name="Camoflage"/>
     <!--Familiars-->
 		<familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
     <!--Trinkets-->

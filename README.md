@@ -7,5 +7,7 @@ A mod for Binding of Isaac: Afterbirth+
 ## Credits
 
 Locou: Ideas, Sprites, Animations
+
 Xiapher: Sprites (Camoflage, Okami Head)
+
 Snailic: Coding

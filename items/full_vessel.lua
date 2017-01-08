@@ -9,6 +9,8 @@ local FullVessel = {
   speed_bonus = 1
 }
 
+local hasCostume = false;
+
 table.insert(locou.Items.Actives, FullVessel)
 
 function full_vessel:Init()
@@ -26,16 +28,18 @@ function full_vessel:EvaluateCache(ply, flag)
     if(flag == CacheFlag.CACHE_SPEED) then
       ply.MoveSpeed = ply.MoveSpeed + FullVessel.speed_bonus
     end
-      ply:AddNullCostume(FullVessel.costumeid)
   end
 end
 
 function full_vessel:Update()
   local ply = game:GetPlayer(0)
   if(ply:HasCollectible(FullVessel.ID)) then
-    if(ply:GetSoulHearts() > 0 or ply:GetBlackHearts() > 0) then
+    if(ply:GetSoulHearts() > 0 or ply:GetBlackHearts() > 0 and hasCostume) then
       ply:TryRemoveNullCostume(FullVessel.costumeid)
-    else
+      hasCostume = false
+    elseif(not hasCostume) then
+      ply:AddNullCostume(FullVessel.costumeid)
+      hasCostume = true
     end
   
     local near_ents = locou:GetEntitiesByDistance(ply,60)
@@ -54,7 +58,7 @@ end
 function full_vessel:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames)
   local ply = game:GetPlayer(0)
   if(ply:HasCollectible(FullVessel.ID)) then
-      if(dmg_target:HasEntityFlags(EntityFlag.FLAG_FREEZE) and dmg_amount >= dmg_target.HitPoints and dmg_target:IsEnemy() and ply:GetSoulHearts() == 0 and ply:GetblackHearts() == 0) then
+      if(dmg_target:HasEntityFlags(EntityFlag.FLAG_FREEZE) and dmg_amount >= dmg_target.HitPoints and dmg_target:IsEnemy() and ply:GetSoulHearts() == 0 and ply:GetBlackHearts() == 0) then
         for i=1,6 do
           ply:FireTear(dmg_target.Position, RandomVector() * 15, true, true, false)
         end

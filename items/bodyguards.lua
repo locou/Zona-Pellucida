@@ -68,7 +68,6 @@ function bodyguards:PostUpdate()
     end
 end
 
-local toggle = true
 function bodyguards:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames) --TODO: Clean this up / find a better way.
   local ply = game:GetPlayer(0)
   local room = game:GetRoom()
@@ -89,12 +88,11 @@ function bodyguards:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source,
               return false
             end
           else
-            if toggle then
-              toggle = false
-              timer.Simple(0.35, function()
+            if not timer.Exists("invuln_timer") then
+              timer.Create("invuln_timer", 0.35, 1, function()
                 ply:ClearEntityFlags(EntityFlag.FLAG_NO_FLASH_ON_DAMAGE)
-                toggle = true
               end)
+              timer.Start("invuln_timer")
             end
             return false
           end

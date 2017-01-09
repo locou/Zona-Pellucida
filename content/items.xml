@@ -8,6 +8,8 @@
     <passive description="Nature's craftiest trick." gfx="Collectibles_Camoflage.png" name="Camoflage"/>
     <passive description="Get down Mr. Isaac!" gfx="Collectibles_Bodyguards.png" name="Bodyguards"/>
     <passive description="Equality is the soul of liberty." gfx="Collectibles_Equality.png" name="Equality"/>
+    <passive description="Blessed chests." gfx="Collectibles_Placeholder.png" name="Holy Key"/>
+    <passive description="Scatter." gfx="Collectibles_Placeholder.png" name="Marble Shot"/>
     <!--Familiars-->
 		<familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
     <!--Trinkets-->

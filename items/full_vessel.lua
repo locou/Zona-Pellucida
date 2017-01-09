@@ -18,7 +18,7 @@ function full_vessel:Init()
 end
 
 function full_vessel:EvaluateCache(ply, flag)
-  ply = game:GetPlayer(0)
+  local ply = game:GetPlayer(0)
   if(ply:HasCollectible(FullVessel.ID)) then
     ply:AddBlackHearts(-40)
     ply:AddSoulHearts(-40)

@@ -108,6 +108,15 @@ function table.contains(table, element)
   return false
 end
 
+function table.containsEnt(table, element)
+  for _, value in pairs(table) do
+    if value.Index == element.Index then
+      return true
+    end
+  end
+  return false
+end
+
 function table.foreach(table, func)
   
 end
@@ -134,3 +143,5 @@ Include('items/full_vessel.lua')
 Include('items/camoflage.lua')
 Include('items/equality.lua')
 Include('items/bodyguards.lua')
+Include('items/holy_key.lua')
+Include('items/marble_shot.lua')

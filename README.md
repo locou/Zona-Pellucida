@@ -10,4 +10,6 @@ Locou: Ideas, Sprites, Animations
 
 Xiapher: Sprites (Camoflage, Okami Head)
 
+/u/RustyTheRed: Pity Party Sprite and Idea
+
 Snailic: Coding

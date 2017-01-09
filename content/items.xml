@@ -15,4 +15,5 @@
     <!--Trinkets-->
     <trinket cache="" description="Double trouble." gfx="Trinket_Bee_Stinger.png" name="Bee Stinger" />
     <trinket cache="" description="Coin on a string." gfx="Trinket_Coin_On_A_String.png" name="Coin On A String" />
+    <trinket cache="" description="Sympathetic friends." gfx="Trinket_Pity_Party.png" name="Pity Party"/>
 </items>

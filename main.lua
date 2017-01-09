@@ -27,6 +27,53 @@ end
 function locou:Update()
 end
 
+locou.Pickups = {
+  Keys = {
+    Variant = PickupVariant.PICKUP_KEY,
+    SubTypes = {
+      KeySubType.KEY_NORMAL,
+      KeySubType.KEY_DOUBLEPACK,
+      KeySubType.KEY_GOLDEN,
+      KeySubType.KEY_CHARGED
+    }
+  },
+  Bombs = {
+    Variant = PickupVariant.PICKUP_BOMB,
+    SubTypes = {
+      BombSubType.BOMB_NORMAL,
+      BombSubType.BOMB_DOUBLEPACK,
+      BombSubType.BOMB_GOLDEN
+    }
+  },
+  Coins = {
+    Variant = PickupVariant.PICKUP_COIN,
+    SubTypes = {
+      CoinSubType.COIN_PENNY,
+      CoinSubType.COIN_DOUBLEPACK,
+      CoinSubType.COIN_NICKEL,
+      CoinSubType.COIN_STICKYNICKEL,
+      CoinSubType.COIN_DIME
+    }
+  },
+  Hearts = {
+    Variant = PickupVariant.PICKUP_HEART,
+    SubTypes = {
+      HeartSubType.HEART_HALF,
+      HeartSubType.HEART_FULL,
+      HeartSubType.HEART_DOUBLEPACK,
+      HeartSubType.HEART_HALF_SOUL,
+      HeartSubType.HEART_SOUL,
+      HeartSubType.HEART_BLENDED,
+      HeartSubType.HEART_BLACK,
+      HeartSubType.HEART_GOLDEN,
+      HeartSubType.HEART_ETERNAL
+    }
+  }
+}
+
+locou.Pickups_Index = {"Keys", "Bombs", "Coins", "Hearts"}
+
+
 function locou:ItemUpdate(ply, flag)
   ply = game:GetPlayer(0)
   if(not flag == CacheFlag.CACHE_FAMILIARS) then
@@ -89,6 +136,17 @@ function locou:GetEntitiesByType(ent_type)
   return ents
 end
 
+function locou:GetEntitiesByVariant(ent_variant)
+  local room_ents = Isaac.GetRoomEntities()
+  local ents = {}
+  for k,v in pairs(room_ents) do
+    if(v.Variant == ent_variant) then
+      table.insert(ents, v)
+    end
+  end
+  return ents
+end
+
 function locou:GetWeaponType()
     local ply = game:GetPlayer(0)
     for i = 0, #WeaponType - 1 do
@@ -108,17 +166,20 @@ function table.contains(table, element)
   return false
 end
 
-function table.containsEnt(table, element)
+function table.foreach(table, func)
   for _, value in pairs(table) do
-    if value.Index == element.Index then
-      return true
+    if(value ~= nil) then
+      func(value)
     end
   end
-  return false
 end
 
-function table.foreach(table, func)
-  
+function table.length(table)
+  local count = 0
+  for _ in pairs(table) do
+    count = count + 1
+  end
+  return count
 end
 
 local update_time = 60 --Calls every 60 frames i.e. 60fps
@@ -145,3 +206,4 @@ Include('items/equality.lua')
 Include('items/bodyguards.lua')
 Include('items/holy_key.lua')
 Include('items/marble_shot.lua')
+Include('items/pity_party.lua')

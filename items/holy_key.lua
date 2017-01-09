@@ -25,7 +25,6 @@ function holy_key:Update()
       if(ent.Variant == PickupVariant.PICKUP_LOCKEDCHEST and ent.FrameCount == 1) then
         local chance = .2
         local random = math.random()
-        Isaac.DebugString("Randomed: " .. random)
         if(random < chance) then
           ent:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, 9001, false)
         end

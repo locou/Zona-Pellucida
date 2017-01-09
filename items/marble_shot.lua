@@ -47,7 +47,7 @@ function marble_shot:UpdateTears()
           local sprite = ent:GetSprite()
           sprite:Load("gfx/002.018_diamond tear.anm2", true)
           sprite:Play(ent:GetSprite():GetDefaultAnimationName(), false)
-          sprite.Scale = Vector(.3 * math.sqrt(ply.Damage),.25 * math.sqrt(ply.Damage))
+          sprite.Scale = Vector(.3 * math.sqrt(ply.Damage),.3 * math.sqrt(ply.Damage))
           sprite:Update()
           table.insert(marbles,ent.Index)
         end

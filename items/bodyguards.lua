@@ -73,11 +73,9 @@ function bodyguards:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source,
   local room = game:GetRoom()
   if(ply:HasCollectible(Bodyguards.ID) and dmg_source.Type ~= EntityType.ENTITY_FIREPLACE) then
     if(familiars ~= nil) then
-      Isaac.DebugString("Familiars: " .. #familiars)
       if(#familiars > 0 and dmg_amount > 0 and next_fam <= #familiars) then
         if(next_fam > previous_fam) then
           if(not ply:HasEntityFlags(EntityFlag.FLAG_NO_FLASH_ON_DAMAGE)) then
-            Isaac.DebugString("Key: " .. next_fam .. " | Previous: " .. previous_fam)
             local familiar = familiars[next_fam]
             if(familiar ~= nil) then
               ply:AddEntityFlags(EntityFlag.FLAG_NO_FLASH_ON_DAMAGE)

@@ -3,7 +3,7 @@ local game = Game()
 
 local FullVessel = {
   ID = Isaac.GetItemIdByName( "Full Vessel" ),
-  costume = "313_holymantle.anm2",
+  costume = "fullvessel.anm2",
   costumeid = 0,
   dmg_mod = 1.5,
   speed_bonus = 1

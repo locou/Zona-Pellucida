@@ -1,9 +1,9 @@
 <AnimatedActor>
-	<Info CreatedBy="Unknown" CreatedOn="26.07.2014 04:29:53" Version="11" Fps="30"/>
+	<Info CreatedBy="Unknown" CreatedOn="12.01.2017 21:20:58" Version="12" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="costumes\costume_313_holymantle.png" Id="0"/>
-			<Spritesheet Path="costumes\costume_313_holymantle_glow.png" Id="1"/>
+			<Spritesheet Path="costumes\costume_fullvessel.png" Id="0"/>
+			<Spritesheet Path="costumes\costume_fullvessel_glow.png" Id="1"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="body1" Id="0" SpritesheetId="0"/>

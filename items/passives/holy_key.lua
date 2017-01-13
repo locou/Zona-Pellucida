@@ -2,20 +2,9 @@ local holy_key = {}
 local game = Game()
 
 local HolyKey = {
-  ID = Isaac.GetItemIdByName( "Holy Key" ),
-  costume = "313_holymantle.anm2",
-  costumeid = 0
+  ID = Isaac.GetItemIdByName( "Holy Key" )
 }
-
-local hasCostume = false;
-
 table.insert(locou.Items.Passives, HolyKey)
-
-function holy_key:Init()
-    HolyKey.costumeid = Isaac.GetCostumeIdByPath("gfx/characters/" .. HolyKey.costume)
-end
-
-local handled = {}
 
 function holy_key:Update()
   local ply = game:GetPlayer(0)
@@ -33,5 +22,4 @@ function holy_key:Update()
   end
 end
 
-locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, holy_key.Init)
 locou:AddCallback(ModCallbacks.MC_POST_UPDATE, holy_key.Update)

@@ -1,3 +1,6 @@
 <costumes anm2root="gfx/characters/">
-	<costume anm2path="313_holymantle.anm2" priority="1" type="none" />
+	<costume anm2path="fullvessel.anm2" priority="1" type="passive" />
+	<costume anm2path="holy_key.anm2" priority="1" type="passive" />
+  <costume anm2path="hot_iron.anm2" priority="1" type="passive" />
+  <costume anm2path="bodyguards.anm2" priority="1" type="passive" />
 </costumes>

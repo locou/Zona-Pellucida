@@ -1,3 +1,18 @@
 <pocketitems>
-	<!-- <card description="" hud="00_TheFool" name="Card" /> -->
+  <!-- Traps -->
+	<card description="I'm setting this one face down" hud="TRAP_MirrorForce" name="Mirror Force" />
+  <card description="I'm setting this one face down" hud="TRAP_MirrorForce2" name="Torrental Tribute" />
+  <card description="I'm setting this one face down" hud="TRAP_MirrorForce3" name="Just Deserts" />
+  <card description="I'm setting this one face down" hud="TRAP_MirrorForce4" name="Magic Cylinder" />
+  <card description="I'm setting this one face down" hud="TRAP_MirrorForce5" name="Spellbinding Circle" />
+  <!-- Spells -->
+  <card description="" hud="TRAP_MirrorForce6" name="Emergency Provisions" />
+  <card description="" hud="TRAP_MirrorForce7" name="Eternal Rest" />
+  <card description="" hud="TRAP_MirrorForce8" name="Scapegoat" />
+  <card description="" hud="TRAP_MirrorForce9" name="Dark Factory" />
+  <card description="" hud="TRAP_MirrorForce10" name="Pot of Greed" />
+  <!-- Trainers -->
+  <card description="Return!" hud="TRAP_MirrorForce11" name="Switch" />
+  <card description="Rest now." hud="TRAP_MirrorForce12" name="Scoop Up" />
+  <card description="" hud="TRAP_MirrorForce13" name="Sleep" />
 </pocketitems>

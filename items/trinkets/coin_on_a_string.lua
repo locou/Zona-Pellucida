@@ -8,6 +8,10 @@ local CoinOnAString = {
 table.insert(locou.Items.Trinkets, CoinOnAString)
 
 function coin_on_a_string:SlotUpdate(ent)
+  local ents = locou:GetEntitiesByType(EntityType.ENTITY_SLOT)
+  for _,ent in pairs(ents) do
+    local slot = ent
+  end
 end
 
---locou:AddCallback(ModCallbacks.MC_NPC_UPDATE, coin_on_a_string.SlotUpdate)
+--locou:AddCallback(ModCallbacks.MC_POST_UPDATE, coin_on_a_string.SlotUpdate)

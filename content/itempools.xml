@@ -1,0 +1,27 @@
+<ItemPools>
+    <Pool Name="treasure">
+        <Item Name="Carving Knife" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Chirurgical Extraction" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Item Shredder" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Meeple" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Pocket Sand" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Foul Egg" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Kind Egg" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Bodyguards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Camoflage" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Equality" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Full Vessel" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Holy Key" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Hot Iron" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Marble Shot" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <!-- <Item Name="" Weight="1" DecreaseBy="1" RemoveOn="0.1"/> -->
+    </Pool>
+    <Pool Name="shop">
+    </Pool>
+    <Pool Name="beggar">
+    </Pool>
+  <Pool Name="greedTreasure">
+    </Pool>
+  <Pool Name="greedShop">
+    </Pool>
+</ItemPools>

@@ -2,13 +2,16 @@ local mirror_force = {}
 local game = Game()
 
 local MirrorForce = {
-  ID = Isaac.GetCardIdByName("Mirror Force"),
-  Variant = Isaac.GetEntityVariantByName("Trap Card")
+  ID = Isaac.GetCardIdByName("00_MirrorForce")
 }
 
-table.insert(locou.Items.Cards, MirrorForce)
+table.insert(locou.Items.Cards.Yugi, MirrorForce)
 
 local shield = false
+function mirror_force:Init()
+  shield = false
+end
+
 function mirror_force:Use_Card(card)
   if(card == MirrorForce.ID) then
     local ply = game:GetPlayer(0)
@@ -39,5 +42,6 @@ function mirror_force:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_sourc
   end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, mirror_force.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, mirror_force.Use_Card, MirrorForce.ID)
 locou:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mirror_force.OnDamageTaken, EntityType.ENTITY_PLAYER)

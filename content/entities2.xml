@@ -17,14 +17,4 @@
     <entity anm2path="1000.010_Blue Flame.anm2" baseHP="0" boss="0" champion="0" collisionDamage="1" collisionMass="6" collisionRadius="24" friction="1" id="1000" name="Mega Maw Flame" numGridCollisionPoints="12" shadowSize="18" stageHP="0">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
     </entity>
-    <!-- Cards -->
-    <entity anm2path="trap_card.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Trap Card" numGridCollisionPoints="24" shadowSize="16" stageHP="0" variant="0">
-        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
-    </entity>
-    <entity anm2path="trap_card.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Spell Card" numGridCollisionPoints="24" shadowSize="16" stageHP="0" variant="0">
-        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
-    </entity>
-    <entity anm2path="trap_card.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Trainer Card" numGridCollisionPoints="24" shadowSize="16" stageHP="0" variant="0">
-        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
-    </entity>
 </entities>

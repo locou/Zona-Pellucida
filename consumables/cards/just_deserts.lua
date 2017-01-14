@@ -2,13 +2,16 @@ local just_deserts = {}
 local game = Game()
 
 local JustDeserts = {
-  ID = Isaac.GetCardIdByName("Just Deserts"),
-  Variant = Isaac.GetEntityVariantByName("Trap Card")
+  ID = Isaac.GetCardIdByName("02_JustDesert")
 }
 
-table.insert(locou.Items.Cards, JustDeserts)
+table.insert(locou.Items.Cards.Yugi, JustDeserts)
 
 local shield = false
+function just_deserts:Init()
+  shield = false
+end
+
 function just_deserts:Use_Card(card)
   if(card == JustDeserts.ID) then
     local ply = game:GetPlayer(0)
@@ -31,5 +34,6 @@ function just_deserts:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_sourc
   end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, just_deserts.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, just_deserts.Use_Card, JustDeserts.ID)
 locou:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, just_deserts.OnDamageTaken, EntityType.ENTITY_PLAYER)

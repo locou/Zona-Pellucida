@@ -1,18 +1,18 @@
 <pocketitems>
   <!-- Traps -->
-	<card description="I'm setting this one face down" hud="TRAP_MirrorForce" name="Mirror Force" />
-  <card description="I'm setting this one face down" hud="TRAP_MirrorForce2" name="Torrental Tribute" />
-  <card description="I'm setting this one face down" hud="TRAP_MirrorForce3" name="Just Deserts" />
-  <card description="I'm setting this one face down" hud="TRAP_MirrorForce4" name="Magic Cylinder" />
-  <card description="I'm setting this one face down" hud="TRAP_MirrorForce5" name="Spellbinding Circle" />
+	<card description="I'm setting this one face down" hud="00_MirrorForce" name="Mirror Force" />
+  <card description="I'm setting this one face down" hud="01_TorrentalTribute" name="Torrental Tribute" />
+  <card description="I'm setting this one face down" hud="02_JustDesert" name="Just Deserts" />
+  <card description="I'm setting this one face down" hud="03_MagicCylinder" name="Magic Cylinder" />
+  <card description="I'm setting this one face down" hud="04_SpellbindingCircle" name="Spellbinding Circle" />
   <!-- Spells -->
-  <card description="" hud="TRAP_MirrorForce6" name="Emergency Provisions" />
-  <card description="" hud="TRAP_MirrorForce7" name="Eternal Rest" />
-  <card description="" hud="TRAP_MirrorForce8" name="Scapegoat" />
-  <card description="" hud="TRAP_MirrorForce9" name="Dark Factory" />
-  <card description="" hud="TRAP_MirrorForce10" name="Pot of Greed" />
+  <card description="" hud="05_EmergencyProvisions" name="Emergency Provisions" />
+  <card description="" hud="06_EternalRest" name="Eternal Rest" />
+  <card description="" hud="07_Scapegoat" name="Scapegoat" />
+  <card description="" hud="08_DarkFactory" name="Dark Factory" />
+  <card description="" hud="09_PotOfGreed" name="Pot of Greed" />
   <!-- Trainers -->
-  <card description="Return!" hud="TRAP_MirrorForce11" name="Switch" />
-  <card description="Rest now." hud="TRAP_MirrorForce12" name="Scoop Up" />
-  <card description="" hud="TRAP_MirrorForce13" name="Sleep" />
+  <card description="Return!" hud="10_Switch" name="Switch" />
+  <card description="Rest now." hud="11_ScoopUp" name="Scoop Up" />
+  <card description="" hud="Sleep" name="12_Sleep" />
 </pocketitems>

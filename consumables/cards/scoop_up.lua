@@ -2,11 +2,10 @@ local scoop_up = {}
 local game = Game()
 
 local ScoopUp = {
-  ID = Isaac.GetCardIdByName("Scoop Up"),
-  Variant = Isaac.GetEntityVariantByName("Trainer Card")
+  ID = Isaac.GetCardIdByName("11_ScoopUp")
 }
 
-table.insert(locou.Items.Cards, ScoopUp)
+table.insert(locou.Items.Cards.Poke, ScoopUp)
 
 function scoop_up:Use_Card(card)
   if(card == ScoopUp.ID) then

@@ -2,13 +2,16 @@ local magic_cylinder = {}
 local game = Game()
 
 local MagicCylinder = {
-  ID = Isaac.GetCardIdByName("Magic Cylinder"),
-  Variant = Isaac.GetEntityVariantByName("Trap Card")
+  ID = Isaac.GetCardIdByName("03_MagicCylinder")
 }
 
-table.insert(locou.Items.Cards, MagicCylinder)
+table.insert(locou.Items.Cards.Yugi, MagicCylinder)
 
 local shield = false
+function magic_cylinder:Init()
+  shield = false
+end
+
 function magic_cylinder:Use_Card(card)
   if(card == MagicCylinder.ID) then
     local ply = game:GetPlayer(0)
@@ -26,11 +29,12 @@ function magic_cylinder:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_sou
       for _,v in pairs(enemies) do
         if(v.HitPoints > max) then ent = v end
       end
-      
+
       if(ent ~= nil) then ent:TakeDamage(ent.MaxHitPoints * .25, DamageFlag.DAMAGE_DEVIL, EntityRef(ply), 0) end
     end
   end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, magic_cylinder.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, magic_cylinder.Use_Card, MagicCylinder.ID)
 locou:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, magic_cylinder.OnDamageTaken, EntityType.ENTITY_PLAYER)

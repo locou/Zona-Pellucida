@@ -15,7 +15,7 @@
     <!-- <passive description="Babygrowth." gfx="Collectibles_Placeholder.png" name="Baby Growth"/>
     <passive description="Babyrage." gfx="Collectibles_Placeholder.png" name="Baby Rage"/>
     <passive description="Babyvirus." gfx="Collectibles_Placeholder.png" name="Baby Virus"/> -->
-    <!-- <passive cache="damage" description="Little Red." gfx="Collectibles_Placeholder.png" name="Red Hood"/> -->
+    <passive cache="firedelay" description="Little Red." gfx="Collectibles_Placeholder.png" name="Red Hood"/>
     <passive cache="damage" description="What are you hiding! Show me immediately!" gfx="Collectibles_Placeholder.png" name="Damage Control"/>
     <passive cache="damage" description="I know best and I will always look after you." gfx="Collectibles_Placeholder.png" name="Mother's Intuition"/>
 

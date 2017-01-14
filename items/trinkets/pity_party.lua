@@ -35,12 +35,12 @@ function pity_party:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source,
       elseif(v.Variant == FamiliarVariant.SACK_OF_PENNIES) then
         local chance = 0.1 * (1 + ply.Luck)
         if(math.random() <= chance) then
-          local pickup = locou:SpawnRandomPickup("coins")
+          local pickup = locou:SpawnRandomPickup("coins", v.Position)
         end
       elseif(v.Variant == FamiliarVariant.BOMB_BAG) then
         local chance = 0.1 * (1 + ply.Luck)
         if(math.random() <= chance) then
-          local pickup = locou:SpawnRandomPickup("bombs")
+          local pickup = locou:SpawnRandomPickup("bombs", v.Position)
         end
       elseif(v.Variant == FamiliarVariant.RUNE_BAG) then
         local chance = 0.05 * (1 + ply.Luck)
@@ -52,10 +52,7 @@ function pity_party:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source,
         local chance_item = 0.015 * (1 + ply.Luck)
         local random = math.random()
         if(random <= chance) then
-          local pickup = locou.Pickups[locou.Pickups_Index[math.random(table.length(locou.Pickups))]]
-          local variant = pickup.Variant
-          local subtype = pickup.SubTypes[math.random(table.length(pickup.SubTypes))]
-          local ent = game:Spawn(EntityType.ENTITY_PICKUP, variant, room:FindFreePickupSpawnPosition(v.Position, 20.0, true), Vector(0,0), ply, subtype, 1)
+          local pickup = locou:SpawnRandomPickup("random", v.Position)
         elseif(random > chance_item) then
           local pedestal = game:Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, room:FindFreePickupSpawnPosition(v.Position, 20.0, true), Vector(0,0), ply, math.random(1,CollectibleType.NUM_COLLECTIBLES), rng:Next())
         end

@@ -18,7 +18,10 @@ locou.Items = {
   Passives = {},
   Familiars = {},
   Trinkets = {},
-  Cards = {}
+  Cards = {
+    Yugi = {},
+    Poke = {}
+  }
 }
 
 function locou:Init()
@@ -368,6 +371,7 @@ Include('items/trinkets/pity_party.lua')
 Include('items/trinkets/goat_eye.lua')
 --Cards--
 --Include('consumables/cards/')
+Include('consumables/cards/cards.lua')
 Include('consumables/cards/dark_factory.lua')
 Include('consumables/cards/emergency_provisions.lua')
 Include('consumables/cards/eternal_rest.lua')
@@ -377,7 +381,7 @@ Include('consumables/cards/mirror_force.lua')
 Include('consumables/cards/pot_of_greed.lua')
 Include('consumables/cards/scapegoat.lua')
 Include('consumables/cards/scoop_up.lua')
-Include('consumables/cards/sleep.lua')
+Include('consumables/cards/switch.lua')
 Include('consumables/cards/spellbinding_circle.lua')
 Include('consumables/cards/sleep.lua')
 Include('consumables/cards/torrental_tribute.lua')

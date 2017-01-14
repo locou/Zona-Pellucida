@@ -2,13 +2,16 @@ local spellbinding_circle = {}
 local game = Game()
 
 local SpellbindingCircle = {
-  ID = Isaac.GetCardIdByName("Spellbinding Circle"),
-  Variant = Isaac.GetEntityVariantByName("Trap Card")
+  ID = Isaac.GetCardIdByName("04_SpellbindingCircle")
 }
 
-table.insert(locou.Items.Cards, SpellbindingCircle)
+table.insert(locou.Items.Cards.Yugi, SpellbindingCircle)
 
 local trigger = false
+function spellbinding_circle:Init()
+  trigger = false
+end
+
 function spellbinding_circle:Use_Card(card)
   if(card == SpellbindingCircle.ID) then
     local ply = game:GetPlayer(0)
@@ -33,5 +36,6 @@ function spellbinding_circle:OnRoomChange()
     end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, spellbinding_circle.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, spellbinding_circle.Use_Card, SpellbindingCircle.ID)
 locou:AddCallback(ModCallbacks.MC_POST_UPDATE, spellbinding_circle.OnRoomChange)

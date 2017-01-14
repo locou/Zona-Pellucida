@@ -2,11 +2,10 @@ local switch = {}
 local game = Game()
 
 local Switch = {
-  ID = Isaac.GetCardIdByName("Switch"),
-  Variant = Isaac.GetEntityVariantByName("Trainer Card")
+  ID = Isaac.GetCardIdByName("10_Switch")
 }
 
-table.insert(locou.Items.Cards, Switch)
+table.insert(locou.Items.Cards.Poke, Switch)
 
 function switch:Use_Card(card)
   if(card == Switch.ID) then

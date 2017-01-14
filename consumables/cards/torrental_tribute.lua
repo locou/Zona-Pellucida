@@ -2,13 +2,16 @@ local torrental_tribute = {}
 local game = Game()
 
 local TorrentalTribute = {
-  ID = Isaac.GetCardIdByName("Torrental Tribute"),
-  Variant = Isaac.GetEntityVariantByName("Trap Card")
+  ID = Isaac.GetCardIdByName("01_TorrentalTribute")
 }
 
-table.insert(locou.Items.Cards, TorrentalTribute)
+table.insert(locou.Items.Cards.Poke, TorrentalTribute)
 
 local trigger = false
+function torrental_tribute:Init()
+  trigger = false
+end
+
 function torrental_tribute:Use_Card(card)
   if(card == TorrentalTribute.ID) then
     local ply = game:GetPlayer(0)
@@ -38,5 +41,6 @@ function torrental_tribute:OnRoomChange()
     end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, torrental_tribute.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, torrental_tribute.Use_Card, TorrentalTribute.ID)
 locou:AddCallback(ModCallbacks.MC_POST_UPDATE, torrental_tribute.OnRoomChange)

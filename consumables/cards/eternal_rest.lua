@@ -2,11 +2,10 @@ local eternal_rest = {}
 local game = Game()
 
 local EternalRest = {
-  ID = Isaac.GetCardIdByName("Eternal Rest"),
-  Variant = Isaac.GetEntityVariantByName("Spell Card")
+  ID = Isaac.GetCardIdByName("06_EternalRest")
 }
 
-table.insert(locou.Items.Cards, EternalRest)
+table.insert(locou.Items.Cards.Yugi, EternalRest)
 
 function eternal_rest:Use_Card(card)
   if(card == EternalRest.ID) then

@@ -2,11 +2,10 @@ local dark_factory = {}
 local game = Game()
 
 local DarkFactory = {
-  ID = Isaac.GetCardIdByName("Dark Factory"),
-  Variant = Isaac.GetEntityVariantByName("Spell Card")
+  ID = Isaac.GetCardIdByName("08_DarkFactory")
 }
 
-table.insert(locou.Items.Cards, DarkFactory)
+table.insert(locou.Items.Cards.Yugi, DarkFactory)
 
 local cur_floor = LevelStage.STAGE_NULL
 local temp = {}
@@ -19,7 +18,7 @@ end
 function dark_factory:IsNewFloor(level)
   local old_floor = cur_floor
   cur_floor = level:GetAbsoluteStage()
-  
+
   return old_floor ~= cur_floor
 end
 

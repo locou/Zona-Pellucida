@@ -2,13 +2,16 @@ local scapegoat = {}
 local game = Game()
 
 local Scapegoat = {
-  ID = Isaac.GetCardIdByName("Scapegoat"),
-  Variant = Isaac.GetEntityVariantByName("Spell Card")
+  ID = Isaac.GetCardIdByName("07_Scapegoat")
 }
 
-table.insert(locou.Items.Cards, Scapegoat)
+table.insert(locou.Items.Cards.Yugi, Scapegoat)
 
 local shield = 0
+function scapegoat:Init()
+  shield = 0
+end
+
 function scapegoat:Use_Card(card)
   if(card == Scapegoat.ID) then
     local ply = game:GetPlayer(0)
@@ -26,5 +29,6 @@ function scapegoat:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, 
   end
 end
 
+locou:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, scapegoat.Init)
 locou:AddCallback(ModCallbacks.MC_USE_CARD, scapegoat.Use_Card, Scapegoat.ID)
 locou:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, scapegoat.OnDamageTaken, EntityType.ENTITY_PLAYER)

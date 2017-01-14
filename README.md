@@ -8,10 +8,10 @@ A mod for Binding of Isaac: Afterbirth+
 
 ## Credits
 
-*Locou* [reddit](https://www.reddit.com/u/locou) [steam](http://steamcommunity.com/id/locou/): Ideas, Sprites, Animations
+*Locou* [reddit](https://www.reddit.com/u/locou) | [steam](http://steamcommunity.com/id/locou/): Ideas, Sprites, Animations
 
-Xiapher: Sprites (Camoflage, Okami Head)
+*Xiapher*: Sprites (Camoflage, Okami Head)
 
-RustyTheRed [reddit](https://www.reddit.com/u/RustyTheRed): Pity Party Sprite and Idea
+*RustyTheRed* [reddit](https://www.reddit.com/u/RustyTheRed): Pity Party Sprite and Idea
 
-Snailic [reddit](https://www.reddit.com/u/Snailic): Coding
+*Snailic* [reddit](https://www.reddit.com/u/Snailic): Coding

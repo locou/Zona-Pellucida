@@ -1,8 +1,8 @@
 <AnimatedActor>
-	<Info CreatedBy="Unknown" CreatedOn="12.01.2017 09:01:47" Version="1" Fps="10"/>
+	<Info CreatedBy="Unknown" CreatedOn="14.01.2017 23:00:46" Version="2" Fps="10"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="..\..\docs\gfx_unused\familiar\familiar_equality.png" Id="0"/>
+			<Spritesheet Path="familiar\Familiar_Equality.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="familiar" Id="0" SpritesheetId="0"/>

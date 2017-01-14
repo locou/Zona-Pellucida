@@ -1,9 +1,9 @@
 <items gfxroot="gfx/items/" version="1">
     <!--Actives-->
     <active description="Déjà vu." gfx="Collectibles_Chirurgical_Extraction.png" maxcharges="12" name="Chirurgical Extraction"/>
-    <active description="Ground to dust." gfx="Collectibles_Placeholder.png" maxcharges="3" name="Item Shredder"/>
-    <active description="Meep." gfx="Collectibles_Placeholder.png" maxcharges="3" name="Meeple"/>
-    <active description="Carved." gfx="Collectibles_Placeholder.png" maxcharges="4" name="Carving Knife"/>
+    <active description="Ground to dust." gfx="Collectibles_Itemgrinder.png" maxcharges="3" name="Item Shredder"/>
+    <active description="Worker Placed" gfx="Collectibles_Meeple.png" maxcharges="3" name="Meeple"/>
+    <active description="Mantle Obtained" gfx="Collectibles_Placeholder.png" maxcharges="4" name="Carving Knife"/>
     <active description="Surprise!" gfx="Collectibles_Placeholder.png" maxcharges="1" name="Pocket Sand"/>
     <active description="Surprise!" gfx="Collectibles_Placeholder.png" maxcharges="1" name="Mega Maw"/>
     <active description="Dust in the wind." gfx="Collectibles_Placeholder.png" maxcharges="1" name="Born From Ash"/>
@@ -22,8 +22,8 @@
     <passive description="Try again." gfx="Collectibles_Placeholder.png" name="Vector Shot"/>
     <!--Familiars-->
     <familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
-    <familiar cache="familiars" description="Kinder egg." gfx="Collectibles_Placeholder.png" name="Kind Egg"/>
-    <familiar cache="familiars" description="Rotten egg." gfx="Collectibles_Placeholder.png" name="Foul Egg"/>
+    <familiar cache="familiars" description="Kindest egg." gfx="Collectibles_KindEgg.png" name="Kind Egg"/>
+    <familiar cache="familiars" description="Rotten egg." gfx="Collectibles_FoulEgg.png" name="Foul Egg"/>
     <familiar cache="familiars" description="Equality is the soul of liberty." gfx="Collectibles_Equality.png" name="Equality"/>
     <!--Trinkets-->
     <trinket cache="" description="Double trouble." gfx="Trinket_Bee_Stinger.png" name="Bee Stinger" />

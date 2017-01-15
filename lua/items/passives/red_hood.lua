@@ -12,15 +12,15 @@ function red_hood:EvaluateCache(ply, flag)
   local ply = game:GetPlayer(0)
   if(ply:HasCollectible(RedHood.ID)) then
     if(flag == CacheFlag.CACHE_FIREDELAY) then
-      baseDelay = ply.FireDelay
+      baseDelay = ply.MaxFireDelay
     end
   end
 end
 
 function red_hood:Update()
   local ply = game:GetPlayer(0)
-  if(ply:HasCollectible(RedHood.ID)) then
-    ply.FireDelay = baseDelay - math.sqrt(ply:GetHearts()) / 5
+  if(ply:HasCollectible(RedHood.ID) and game:GetRoom():GetFrameCount() >= 2) then
+    ply.MaxFireDelay = baseDelay - math.floor(math.sqrt(ply:GetHearts() * ply:GetCollectibleNum(RedHood.ID)) / 5)
   end
 end
 

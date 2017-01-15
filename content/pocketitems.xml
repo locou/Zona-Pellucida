@@ -12,7 +12,7 @@
   <card description="" hud="08_DarkFactory" name="Dark Factory" />
   <card description="" hud="09_PotOfGreed" name="Pot of Greed" />
   <!-- Trainers -->
-  <card description="Return!" hud="10_Switch" name="Switch" />
-  <card description="Rest now." hud="11_ScoopUp" name="Scoop Up" />
-  <card description="" hud="Sleep" name="12_Sleep" />
+  <!-- <card description="Return!" hud="10_Switch" name="Switch" />
+  <card description="Rest now." hud="11_ScoopUp" name="Scoop Up" /> -->
+  <card description="" hud="12_Sleep" name="Sleep" />
 </pocketitems>

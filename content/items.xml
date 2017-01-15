@@ -18,7 +18,7 @@
     <passive cache="firedelay" description="Little Red." gfx="Collectibles_Placeholder.png" name="Red Hood"/>
     <passive cache="damage" description="What are you hiding! Show me immediately!" gfx="Collectibles_Placeholder.png" name="Damage Control"/>
     <passive cache="damage" description="I know best and I will always look after you." gfx="Collectibles_Placeholder.png" name="Mother's Intuition"/>
-
+    <passive cache="damage firedelay speed luck" description="Grind!" gfx="Collectibles_Placeholder.png" name="EXP Bar"/>
     <passive description="Try again." gfx="Collectibles_Placeholder.png" name="Vector Shot"/>
     <!--Familiars-->
     <familiar cache="familiars" description="One genuine pedigreed pet rock." gfx="Collectibles_Pet_Rock.png" name="Pet Rock"/>
@@ -29,7 +29,7 @@
     <trinket cache="" description="Double trouble." gfx="Trinket_Bee_Stinger.png" name="Bee Stinger" />
     <trinket cache="" description="Coin on a string." gfx="Trinket_Coin_On_A_String.png" name="Coin On A String" />
     <trinket cache="" description="Sympathetic friends." gfx="Trinket_Pity_Party.png" name="Pity Party"/>
-    <trinket cache="" description="Evil Eye." gfx="Trinket_Placeholder.png" name="Goat Eye"/>
+    <trinket cache="" description="Evil Eye." gfx="Trinket_GoatEye.png" name="Goat Eye"/>
 
     <passive cache="damage speed" description="Petrifying." gfx="Collectibles_Full_Vessel.png" hearts="2" name="Full Vessel"/>
     <passive description="Blessed chests." gfx="Collectibles_Holy_Key.png" name="Holy Key"/>

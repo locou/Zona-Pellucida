@@ -11,9 +11,10 @@ function holy_key:Update()
   if(ply:HasCollectible(HolyKey.ID)) then
     local ents = locou:GetEntitiesByType(EntityType.ENTITY_PICKUP)
     for _,ent in pairs(ents) do
-      if(ent.Variant == PickupVariant.PICKUP_LOCKEDCHEST and ent.FrameCount == 1) then
+      if(ent.Variant == PickupVariant.PICKUP_LOCKEDCHEST and ent.FrameCount == 1 and ent.FlipX == false) then
         local chance = .2
         local random = math.random()
+        ent.FlipX = true
         if(random < chance) then
           ent:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, 9001, false)
         end

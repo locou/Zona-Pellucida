@@ -26,9 +26,7 @@ function pet_rock:UpdateFamiliar(ent)
   if(ply:HasCollectible(PetRock.ID)) then
     if(ent.Parent == nil) then ent.Parent = ply end
     if(ent.Parent.Index ~= ply.Index) then ent.Friction = 0.5 end
-    ent:FollowPosition(ent.Parent.Position + Vector(4.0,4.0))
-  elseif(ent.Variant == PetRock.Variant) then
-    ent:Kill()
+    ent:FollowPosition(ent.Parent.Position - ent.Parent.Velocity:Normalized() * 16)
   end
 end
 

@@ -12,11 +12,11 @@ function sleep:Use_Card(card)
     local ply = game:GetPlayer(0)
     local enemies = locou:GetEnemies()
     for _,v in pairs(enemies) do
-      v:AddEntityFlags(EntityFlag.ENTITY_FREEZE)
-      v:AddEntityFlags(EntityFlag.ENTITY_CONFUSED)
+      v:AddEntityFlags(EntityFlag.FLAG_FREEZE)
+      v:AddEntityFlags(EntityFlag.FLAG_CONFUSION)
       timer.Create("sleep"..v.Index,5.0,1, function()
-        v:ClearEntityFlags(EntityFlag.ENTITY_FREEZE)
-        v:ClearEntityFlags(EntityFlag.ENTITY_CONFUSED)
+        v:ClearEntityFlags(EntityFlag.FLAG_FREEZE)
+        v:ClearEntityFlags(EntityFlag.FLAG_CONFUSION)
       end)
       timer.Start("sleep"..v.Index)
     end
@@ -24,10 +24,10 @@ function sleep:Use_Card(card)
 end
 
 function sleep:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames)
-  if(dmg_target ~= nil and dmg_target:HasEntityFlags(EntityFlag.ENTITY_FREEZE) and dmg_target:HasEntityFlags(EntityFlag.ENTITY_CONFUSED) and dmg_amount > 0) then
-    dmg_target:ClearEntityFlags(EntityFlag.ENTITY_FREEZE)
-    dmg_target:ClearEntityFlags(EntityFlag.ENTITY_CONFUSED)
-    timer.Destroy("sleep"..dmg_taget.Index)
+  if(timer.Exists("sleep"..dmg_target.Index) and dmg_target ~= nil and dmg_target:HasEntityFlags(EntityFlag.ENTITY_FREEZE) and dmg_target:HasEntityFlags(EntityFlag.ENTITY_CONFUSE) and dmg_amount > 0) then
+    dmg_target:ClearEntityFlags(EntityFlag.FLAG_FREEZE)
+    dmg_target:ClearEntityFlags(EntityFlag.FLAG_CONFUSION)
+    timer.Destroy("sleep"..dmg_target.Index)
   end
 end
 

@@ -1,0 +1,8 @@
+stats = {
+ damage = 0.0,
+ luck = 0.0,
+ speed = 0.0,
+ firedelay = 1.0,
+ exp = 2.0,
+ tolevel = 15.0,
+}

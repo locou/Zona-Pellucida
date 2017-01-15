@@ -20,8 +20,8 @@
     </Pool>
     <Pool Name="beggar">
     </Pool>
-  <Pool Name="greedTreasure">
+    <Pool Name="greedTreasure">
     </Pool>
-  <Pool Name="greedShop">
+    <Pool Name="greedShop">
     </Pool>
 </ItemPools>

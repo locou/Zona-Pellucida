@@ -6,10 +6,10 @@ function Include(aFilename)
   local sourcePath = debug.getinfo(1, "S").source:sub(2)
   local baseDir = sourcePath:match(".*/") or "./"
 
-  dofile( ("%s%s"):format(baseDir, aFilename) )
+  dofile( ("%s%s"):format(baseDir .. "lua/", aFilename) )
 end
 
-Include('lua/timer.lua')
+Include('timer.lua')
 
 local game = Game()
 
@@ -83,10 +83,15 @@ function locou:ItemUpdate(ply, flag)
   else
     for k,v in pairs(locou.Items.Familiars) do
       if(locou:CountEntities(v.Type, v.Variant) > ply:GetCollectibleNum(v.ID)) then
-        local fams = locou:GetEntitiesByVariant(v.Type, v.Variant)
+          local count = locou:CountEntities(v.Type, v.Variant) - ply:GetCollectibleNum(v.ID)
+          local fams = locou:GetEntitiesByVariant(v.Type, v.Variant)
           for _,v in pairs(fams) do
-            v:Kill()
-            break
+            if(count > 0) then
+              v:Kill()
+              count = count - 1
+            else
+              break
+            end
           end
       else
         locou:InitFamiliar(ply, v.ID, v.Type, v.Variant)
@@ -261,6 +266,35 @@ function table.length(table)
   return count
 end
 
+function table.serialize(val, name, skipnewlines, depth)
+    skipnewlines = skipnewlines or false
+    depth = depth or 0
+
+    local tmp = string.rep(" ", depth)
+
+    if name then tmp = tmp .. name .. " = " end
+
+    if type(val) == "table" then
+        tmp = tmp .. "{" .. (not skipnewlines and "\n" or "")
+
+        for k, v in pairs(val) do
+            tmp =  tmp .. table.serialize(v, k, skipnewlines, depth + 1) .. "," .. (not skipnewlines and "\n" or "")
+        end
+
+        tmp = tmp .. string.rep(" ", depth) .. "}"
+    elseif type(val) == "number" then
+        tmp = tmp .. tostring(val)
+    elseif type(val) == "string" then
+        tmp = tmp .. string.format("%q", val)
+    elseif type(val) == "boolean" then
+        tmp = tmp .. (val and "true" or "false")
+    else
+        tmp = tmp .. "\"[inserializeable datatype:" .. type(val) .. "]\""
+    end
+
+    return tmp
+end
+
 local update_time = 60 --Calls every 60 frames i.e. 60fps
 function locou:render()
     timer.Update(1/update_time)
@@ -353,10 +387,11 @@ Include('items/passives/bodyguards.lua')
 Include('items/passives/holy_key.lua')
 Include('items/passives/marble_shot.lua')
 Include('items/passives/strong_reaction.lua')
---Include('items/passives/red_hood.lua')
+Include('items/passives/red_hood.lua')
 Include('items/passives/damage_control.lua')
 Include('items/passives/mothers_intuition.lua')
 Include('items/passives/vector_shot.lua')
+Include('items/passives/exp_bar.lua')
 --Familiars--
 --Include('items/familiars/')
 Include('items/familiars/pet_rock.lua')

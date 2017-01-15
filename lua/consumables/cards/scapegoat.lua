@@ -21,11 +21,9 @@ end
 
 function scapegoat:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames)
   local ply = game:GetPlayer(0)
-  if(dmg_target.Type == EntityType.ENTITY_PLAYER and dmg_amount > 0 and ply.Position:Distance(dmg_source.Entity.Position) < 16) then
-    if(shield > 0) then
-      shield = shield - 1
-      return false
-    end
+  if(shield > 0 and dmg_target.Type == EntityType.ENTITY_PLAYER and dmg_amount > 0 and ply.Position:Distance(dmg_source.Position) < 16) then
+    shield = shield - 1
+    return false
   end
 end
 

@@ -9,40 +9,48 @@ local KindEgg = {
 
 table.insert(locou.Items.Familiars, KindEgg)
 
-local broken = false
+local broken = {}
+local temp = nil
 function kind_egg:Init()
-  broken = false
+  temp = game:GetPlayer(0)
 end
 
 function kind_egg:InitFamiliar(ent)
-  local ply = game:GetPlayer(0)
-  ent.Parent = ply
+  if(temp == nil) then temp = game:GetPlayer(0) end
+  ent.Parent = temp
+  temp = ent
 end
 
 function kind_egg:UpdateFamiliar(ent)
   local ply = game:GetPlayer(0)
-  if(ply:HasCollectible(FoulEgg.ID)) then
-    if(not broken) then
-      ent:FollowPosition(ent.Parent.Position + Vector(8.0,8.0))
+  if(ply:HasCollectible(KindEgg.ID)) then
+    if(not table.contains(broken, ent.Index)) then
+      if(ent.Parent == nil) then ent.Parent = ply end
+      ent:FollowPosition(ent.Parent.Position - ent.Parent.Velocity:Normalized() * 16)
       ent.CollisionDamage = 1
     else
       ent.Velocity = Vector(0.0,0.0)
       ent.CollisionDamage = 0
     end
-  elseif(ent.Variant == KindEgg.Variant) then
-    ent:Kill()
   end
 end
 
 function kind_egg:OnDamageTaken(dmg_target, dmg_amount, dmg_flags, dmg_source, dmg_frames)
   if(dmg_source.Type == EntityType.ENTITY_FAMILIAR and dmg_source.Variant == KindEgg.Variant) then
-    if(not timer.Exists("kind_egg"..dmg_source.Entity.Index)) then
-      broken = true
+    local index = dmg_source.Entity.Index
+    if(not timer.Exists("kind_egg"..index)) then
+      local ply = game:GetPlayer(0)
+      table.insert(broken,index)
       locou:SpawnRandomPickup("random", dmg_source.Position)
-      timer.Create("kind_egg"..dmg_source.Entity.Index,8.0,1, function()
-        broken = false
+      timer.Create("kind_egg"..index,8.0,1, function()
+        for k,v in pairs(broken) do
+          if v == index then
+            table.remove(broken,k)
+            break
+          end
+        end
       end)
-      timer.Start("kind_egg"..dmg_source.Entity.Index)
+      timer.Start("kind_egg"..index)
       return false
     end
   end

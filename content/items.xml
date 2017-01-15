@@ -4,7 +4,7 @@
     <active description="Ground to dust." gfx="Collectibles_Itemgrinder.png" maxcharges="3" name="Item Shredder"/>
     <active description="Worker Placed" gfx="Collectibles_Meeple.png" maxcharges="3" name="Meeple"/>
     <active description="Mantle Obtained" gfx="Collectibles_Carving_Knife.png" maxcharges="4" name="Carving Knife"/>
-    <active description="Surprise!" gfx="Collectibles_Placeholder.png" maxcharges="1" name="Pocket Sand"/>
+    <active description="Surprise!" gfx="Collectibles_Pocket_Sand.png" maxcharges="1" name="Pocket Sand"/>
     <active description="Surprise!" gfx="Collectibles_Placeholder.png" maxcharges="1" name="Mega Maw"/>
     <active description="Dust in the wind." gfx="Collectibles_Placeholder.png" maxcharges="1" name="Born From Ash"/>
     <!--Passives-->

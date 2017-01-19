@@ -1,26 +1,26 @@
-local equality = {}
+local equilibrium = {}
 local game = Game()
 
-local Equality = {
-  ID = Isaac.GetItemIdByName( "Equality" ),
-  Type = Isaac.GetEntityTypeByName( "Equality" ),
-  Variant = Isaac.GetEntityVariantByName( "Equality" )
+local Equilibrium = {
+  ID = Isaac.GetItemIdByName( "Equilibrium" ),
+  Type = Isaac.GetEntityTypeByName( "Equilibrium" ),
+  Variant = Isaac.GetEntityVariantByName( "Equilibrium" )
 }
 
-table.insert(locou.Items.Familiars, Equality)
+table.insert(locou.Items.Familiars, Equilibrium)
 
 local reward = false
 local temp = nil
-function equality:InitFamiliar(ent)
+function equilibrium:InitFamiliar(ent)
   if(temp == nil) then temp = game:GetPlayer(0) end
   ent.Parent = temp
   temp = ent
 end
 
-function equality:UpdateFamiliar(ent)
+function equilibrium:UpdateFamiliar(ent)
   local ply = game:GetPlayer(0)
   local room = game:GetRoom()
-  if(ply:HasCollectible(Equality.ID)) then
+  if(ply:HasCollectible(Equilibrium.ID)) then
     local sprite = ent:GetSprite()
     local coins = math.max(ply:GetNumCoins(),1)
     local bombs  = math.max(ply:GetNumBombs(),1)
@@ -30,7 +30,7 @@ function equality:UpdateFamiliar(ent)
     sprite.PlaybackSpeed = 0.4
     if(room:IsFirstVisit() and not reward and locou:HasEnemies() and room:GetFrameCount() == 1) then reward = true end
     if(room:IsFirstVisit() and room:IsClear() and reward) then
-      for _,v in pairs(locou:GetEntitiesByVariant(EntityType.ENTITY_FAMILIAR, Equality.Variant)) do
+      for _,v in pairs(locou:GetEntitiesByVariant(EntityType.ENTITY_FAMILIAR, Equilibrium.Variant)) do
         if(math.random() < chance) then
           if(chance >= .2) then
             local room = game:GetRoom()
@@ -52,11 +52,11 @@ function equality:UpdateFamiliar(ent)
       sprite:Play("bad", true)
     end
   else
-    if(ent.Variant == Equality.Variant) then
+    if(ent.Variant == Equilibrium.Variant) then
       ent:Kill()
     end
   end
 end
 
-locou:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, equality.InitFamiliar, Equality.Variant)
-locou:AddCallback(ModCallbacks.MC_FAMILIAR_UPDATE, equality.UpdateFamiliar, Equality.Variant)
+locou:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, equilibrium.InitFamiliar, Equilibrium.Variant)
+locou:AddCallback(ModCallbacks.MC_FAMILIAR_UPDATE, equilibrium.UpdateFamiliar, Equilibrium.Variant)
